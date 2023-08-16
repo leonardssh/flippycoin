@@ -1,0 +1,55 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: unset;
+  overflow-x: hidden;
+}
+
+progress {
+  width: 250px;
+  border: 0;
+  height: 10px;
+  border-radius: 20px;
+}
+
+progress::-webkit-progress-bar {
+  border: 0;
+  height: 10px;
+  border-radius: 20px;
+  background-color: #242839;
+  transition: all 0.5s ease-in-out;
+  transition-duration: 500ms;
+}
+
+progress::-webkit-progress-value {
+  border: 0;
+  height: 10px;
+  border-radius: 20px;
+  background-color: #38A169;
+  transition: all 0.5s ease-in-out;
+  transition-duration: 500ms;
+
+}
+
+progress::-moz-progress-bar {
+  border: 0;
+  height: 10px;
+  border-radius: 20px;
+}
+
+.heads {
+  width: 20px;
+  height: 20px;
+  background: url(https://cdn.discordapp.com/attachments/1141014920134131742/1141075434025517096/ethethcoinetheriumicon-1320162857971241492.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.tails {
+  width: 20px;
+  height: 20px;
+  background: url(https://cdn.discordapp.com/attachments/1141014920134131742/1141075584928202762/ethethcoinetheriumicon-1320162857971241492.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotateX(180deg);
+}

@@ -1,0 +1,62 @@
+.coin-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    perspective: 1000px;
+}
+
+.coin {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.heads,
+.tails {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+}
+
+.heads {
+    width: 200px;
+    height: 200px;
+    background: url(https://cdn.discordapp.com/attachments/1141014920134131742/1141075434025517096/ethethcoinetheriumicon-1320162857971241492.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.tails {
+    width: 200px;
+    height: 200px;
+    background: url(https://cdn.discordapp.com/attachments/1141014920134131742/1141075584928202762/ethethcoinetheriumicon-1320162857971241492.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotateX(180deg);
+}
+
+
+@keyframes flip-tails {
+    0% {
+        transform: rotateX(0);
+    }
+
+    100% {
+        transform: rotateX(900deg);
+    }
+}
+
+@keyframes flip-heads {
+    0% {
+        transform: rotateX(0);
+    }
+
+    100% {
+        transform: rotateX(1080deg);
+    }
+}
