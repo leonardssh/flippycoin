@@ -177,7 +177,7 @@ export const Header = ({ user, setUser, isDemo, setIsDemo }) => {
         <Spacer />
         <Flex flexDirection={'row'} alignItems={'center'} justifyContent={'center'} gap="5">
           <Flex justifyContent={'center'} alignItems={'center'}>
-            <ImBook style={{ color: 'white', fontSize: '2.2rem', cursor: 'pointer' }} onClick={() => window.open('https://google.com')} />
+            <ImBook style={{ color: 'white', fontSize: '2.2rem', cursor: 'pointer' }} onClick={() => window.open('https://gitbook.flippycoin.io')} />
           </Flex>
 
           {user && (
