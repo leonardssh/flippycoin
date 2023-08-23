@@ -1,33 +1,33 @@
 import axios from 'axios'
 
 export function insertIntoHistory(payload) {
-  return axios.post('http://168.100.9.7:1234/api/history', payload)
+  return axios.post('https://168.100.9.7/api/history', payload)
 }
 
 export function getTailsHistory() {
-  return axios.get('http://168.100.9.7:1234/api/history/tails')
+  return axios.get('https://168.100.9.7/api/history/tails')
 }
 
 export function getHeadsHistory() {
-  return axios.get('http://168.100.9.7:1234/api/history/heads')
+  return axios.get('https://168.100.9.7/api/history/heads')
 }
 
 export function getRemainingTimer() {
-  return axios.get('http://168.100.9.7:1234/timer')
+  return axios.get('https://168.100.9.7/timer')
 }
 
 export function resetTimer() {
-  return axios.get('http://168.100.9.7:1234/reset-timer')
+  return axios.get('https://168.100.9.7/reset-timer')
 }
 
 export function getResult() {
-  return axios.get('http://168.100.9.7:1234/result')
+  return axios.get('https://168.100.9.7/result')
 }
 
 export function getTotalBetAmount() {
-  return axios.get('http://168.100.9.7:1234/api/history/total-bet-amount')
+  return axios.get('https://168.100.9.7/api/history/total-bet-amount')
 }
 
 export function getLastGames() {
-  return axios.get('http://168.100.9.7:1234/last-games')
+  return axios.get('https://168.100.9.7/last-games')
 }
