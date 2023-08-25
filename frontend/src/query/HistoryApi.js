@@ -1,15 +1,15 @@
 import axios from 'axios'
 
 export function insertIntoHistory(payload) {
-  return axios.post('https://api.flippycoin.io/history', payload)
+  return axios.post('https://api.flippycoin.io/api/history', payload)
 }
 
 export function getTailsHistory() {
-  return axios.get('https://api.flippycoin.io/history/tails')
+  return axios.get('https://api.flippycoin.io/api/history/tails')
 }
 
 export function getHeadsHistory() {
-  return axios.get('https://api.flippycoin.io/history/heads')
+  return axios.get('https://api.flippycoin.io/api/history/heads')
 }
 
 export function getRemainingTimer() {
@@ -25,7 +25,7 @@ export function getResult() {
 }
 
 export function getTotalBetAmount() {
-  return axios.get('https://api.flippycoin.io/history/total-bet-amount')
+  return axios.get('https://api.flippycoin.io/api/history/total-bet-amount')
 }
 
 export function getLastGames() {
