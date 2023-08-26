@@ -37,7 +37,7 @@ const DepositModal = ({ isOpen, onClose, onSubmit }) => {
           <ModalHeader>Deposit</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text mb={2}>Your wallet address is:</Text>
+            <Text mb={2}>Enter the amount you want to deposit:</Text>
             <FormControl>
               <FormLabel>Amount</FormLabel>
               <Input placeholder="Amount" type="number" value={amount} onChange={ev => setAmount(ev.target.value)} />
@@ -101,8 +101,8 @@ export const Header = ({ user, setUser, isDemo, setIsDemo }) => {
       return
     }
 
-    if (user.balance < 0.1) {
-      toast.error('You must have at least 0.1 ETH to withdraw!')
+    if (user.balance < 0.05) {
+      toast.error('You must have at least 0.05 ETH to withdraw!')
       return
     }
 
@@ -160,7 +160,6 @@ export const Header = ({ user, setUser, isDemo, setIsDemo }) => {
       toast.error('install metamask extension!')
     }
 
-    console.log(amount)
     onClose()
   }
 
