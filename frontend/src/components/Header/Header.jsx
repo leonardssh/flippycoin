@@ -37,9 +37,8 @@ const DepositModal = ({ isOpen, onClose, onSubmit }) => {
           <ModalHeader>Deposit</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text mb={2}>Enter the amount you want to deposit:</Text>
             <FormControl>
-              <FormLabel>Amount</FormLabel>
+              <FormLabel>Enter the amount you want to deposit:</FormLabel>
               <Input placeholder="Amount" type="number" value={amount} onChange={ev => setAmount(ev.target.value)} />
             </FormControl>
           </ModalBody>
