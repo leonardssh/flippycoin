@@ -27,6 +27,8 @@ function App() {
   const { data: totalBetAmount, refetch: totalBetAmountRefetch } = useTotalBetAmount()
   const { data: lastGames, refetch: lastGamesRefetch } = useLastGames()
 
+  const [gameId, setGameId] = useState(0)
+
   useEffect(() => {
     const tailsInterval = setInterval(() => {
       tailsRefetch()
@@ -92,6 +94,14 @@ function App() {
   }, [lastGamesRefetch])
 
   useEffect(() => {
+    if (!lastGames) {
+      return
+    }
+
+    setGameId(lastGames[0].id)
+  }, [lastGames])
+
+  useEffect(() => {
     const lazyResultTimeout = setTimeout(() => {
       setLazyResult(result?.result)
     }, 5_000)
@@ -135,21 +145,15 @@ function App() {
 
         <BetForm user={user} isDisabled={timer?.globalTimer === 0} isDemo={isDemo} />
 
-        {lastGames !== undefined && (
-          <Flex flexDirection="column" justifyContent="center" alignItems="center">
-            <Text fontFamily={'Rubik'} lineHeight={0} color="white" fontWeight="medium" textAlign={'center'} marginBottom={3}>
-              GameID: #{lastGames[0].id}
-            </Text>
+        <Flex flexDirection="column" justifyContent="center" alignItems="center">
+          <Text fontFamily={'Rubik'} lineHeight={0} color="white" fontWeight="medium" textAlign={'center'} marginBottom={3}>
+            GameID: #{gameId}
+          </Text>
 
-            <Flex flexDirection="row" justifyContent="center" alignItems="center" gap={3} marginTop={5}>
-              {lastGames
-                .sort((a, b) => a.id - b.id)
-                .map(lastGame => (
-                  <img src={icons[lastGame.color]} key={lastGame.id} width={35} />
-                ))}
-            </Flex>
+          <Flex flexDirection="row" justifyContent="center" alignItems="center" gap={3} marginTop={5}>
+            {lastGames !== undefined && lastGames.sort((a, b) => a.id - b.id).map(lastGame => <img src={icons[lastGame.color]} key={lastGame.id} width={35} />)}
           </Flex>
-        )}
+        </Flex>
 
         <Flex flex={1} mt={5}>
           <Flex
