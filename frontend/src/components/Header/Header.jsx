@@ -22,16 +22,21 @@ import { ImBook } from 'react-icons/im'
 import toast from 'react-hot-toast'
 
 const DepositModal = ({ isOpen, onClose, onSubmit }) => {
-  const [amount, setAmount] = useState(5)
+  const [amount, setAmount] = useState(0.01)
   const initialRef = useRef(null)
 
   const handleSubmit = () => {
     onSubmit(amount)
   }
 
+  const handleOnClose = () => {
+    setAmount(0.01)
+    onClose()
+  }
+
   return (
     <>
-      <Modal initialFocusRef={initialRef} isOpen={isOpen} onClose={onClose}>
+      <Modal initialFocusRef={initialRef} isOpen={isOpen} onClose={handleOnClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Deposit</ModalHeader>
@@ -47,7 +52,7 @@ const DepositModal = ({ isOpen, onClose, onSubmit }) => {
             <Button colorScheme="blue" mr={3} onClick={handleSubmit}>
               Deposit
             </Button>
-            <Button onClick={onClose}>Cancel</Button>
+            <Button onClick={handleOnClose}>Cancel</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

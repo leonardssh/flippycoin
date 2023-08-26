@@ -13,5 +13,5 @@ export function login(wallet) {
 }
 
 export function transaction(transaction) {
-  return axios.post('https://api.flippycoin.io/api/transaction', transaction)
+  return axios.post('https://api.flippycoin.io/transaction', transaction)
 }
